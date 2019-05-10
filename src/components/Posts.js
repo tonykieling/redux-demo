@@ -12,21 +12,11 @@ class Posts extends Component {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(res => res.json())
       .then(data => this.setState({posts: data}))
-        // data.forEach(element => {
-        //   console.log("element: ", element)
-        //   this.setState({
-        //     posts: [
-        //       ...this.state.posts, 
-        //       [{id: element.id,
-        //       name: element.name}]
-        //     ]
-        //   })
-        // });
   }
 
-  componentDidUpdate() {
-    console.log("DIDthis.state: ", this.state)
-  }
+  // componentDidUpdate() {
+  //   console.log("DIDthis.state: ", this.state)
+  // }
 
   render() {
     const postItems = this.state.posts.map(post => (
