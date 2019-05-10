@@ -24,9 +24,9 @@ class Posts extends Component {
         // });
   }
 
-  // componentDidMount() {
-  //   console.log("DIDthis.state: ", this.state)
-  // }
+  componentDidUpdate() {
+    console.log("DIDthis.state: ", this.state)
+  }
 
   render() {
     const postItems = this.state.posts.map(post => (

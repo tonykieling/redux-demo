@@ -13,7 +13,7 @@ class Postform extends Component {
     this.setState({
       [e.target.name]: e.target.value
     })
-    console.log(e.target)
+    // console.log(e.target)
   }
 
   handleSubmit = e => {
@@ -22,16 +22,17 @@ class Postform extends Component {
       name: this.state.name,
       email: this.state.email
     }
-console.log("post: ", post)
-    // fetch('https://jsonplaceholder.typicode.com/users', {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json"
-    //   },
-    //   body: JSON.stringify(post)
-    // })
-    // .then(res => res.json)
-    // .then(data => console.log(data))
+    
+  fetch('https://jsonplaceholder.typicode.com/users', {
+    method: 'POST',
+    body: JSON.stringify(post),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  })
+  .then(response => response.json())
+  .then(json => console.log(json))
+
   }
 
   render() {
