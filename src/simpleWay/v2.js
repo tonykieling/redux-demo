@@ -8,7 +8,7 @@ const initialState = {
 }
 
 // ### 1- CREATE REDUCER
-// it is gonna receive the
+// it is gonna receive
 //  - state, which can be set to have a initial value as default parameter, and
 //  - action, which has to have at least the type of the action. Also it's possible to pass value
 //    that is, it's an object which two properties: type and value
