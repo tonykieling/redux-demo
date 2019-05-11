@@ -1,4 +1,3 @@
-// import { createStore } from 'redux'
 const { createStore } = require('redux');
 
 // create initial state
@@ -9,10 +8,11 @@ const initialState = {
 // create reducer
 myReducer = (state = initialState, action) => {
   const newState = {...state};
+  console.log("newState: ", newState);
   switch (action.type) {
     case "ADD":
       console.log("ADD action");
-      return newState.number = newState.numer + 1;
+      return newState.number = newState.number + 1;
     case "SUB":
       console.log("SUB action");
       return newState.number = newState.number - 1;
@@ -23,6 +23,7 @@ myReducer = (state = initialState, action) => {
 }
 
 // create store
+console.log("create store");
 const store = createStore(myReducer);
 
 // dispatching ADD
