@@ -6,19 +6,19 @@ const initialState = {
 }
 
 // create reducer
-myReducer = (state = initialState, action) => {
+const myReducer = (state = initialState, action) => {
   const newState = {...state};
-  console.log("newState: ", newState);
+  console.log("newState: ", newState, " action: ", action);
   switch (action.type) {
     case "ADD":
-      console.log("ADD action");
       return newState.number = newState.number + 1;
+      // console.log("ADD action");
     case "SUB":
-      console.log("SUB action");
       return newState.number = newState.number - 1;
+      // console.log("SUB action");
     default:
-      console.log("NO action selected");
       return newState;
+      // console.log("NO action selected");
   }
 }
 
@@ -26,8 +26,27 @@ myReducer = (state = initialState, action) => {
 console.log("create store");
 const store = createStore(myReducer);
 
+// // dispatching ADD
+// store.dispatch({type: "SUB"});
+// // checking state
+// console.log("Store is now = " + store.getState());
+
+// dispatching ADD
+store.dispatch({type: "SUB"});
+// checking state
+console.log("Store is now = " + JSON.stringify(store.getState()));
+
 // dispatching ADD
 store.dispatch({type: "ADD"});
-
 // checking state
-console.log("Store is = " + store.getState());
+console.log("Store is now = ", JSON.stringify(store.getState()));
+
+// // dispatching ADD
+// store.dispatch({type: "SUB"});
+// // checking state
+// console.log("Store is now = " + store.getState());
+
+// // dispatching ADD
+// store.dispatch({type: "ADD"});
+// // checking state
+// console.log("Store is now = " + store.getState());
